@@ -1,0 +1,368 @@
+<title>Zawwar Kamran</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --bg:#EEF0F1;
+  --surface:#FFFFFF;
+  --ink:#14181D;
+  --ink-soft:#4B535C;
+  --ink-faint:#7B838B;
+  --accent:#AE4E17;
+  --accent-soft:#F1E3D8;
+  --confirm:#1F6F63;
+  --confirm-soft:#DDEBE8;
+  --line:#D7DBDD;
+  --font-display:'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1215;
+    --surface:#181C20;
+    --ink:#E9EBEC;
+    --ink-soft:#A6ADB2;
+    --ink-faint:#767D82;
+    --accent:#E2884E;
+    --accent-soft:#3A2A1D;
+    --confirm:#5FBBAA;
+    --confirm-soft:#1C2E2A;
+    --line:#2B3034;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1215;
+  --surface:#181C20;
+  --ink:#E9EBEC;
+  --ink-soft:#A6ADB2;
+  --ink-faint:#767D82;
+  --accent:#E2884E;
+  --accent-soft:#3A2A1D;
+  --confirm:#5FBBAA;
+  --confirm-soft:#1C2E2A;
+  --line:#2B3034;
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  padding-inline:20px;
+  padding-block:56px;
+}
+.wrap{max-width:720px;margin:0 auto;}
+
+h1,h2,h3{font-family:var(--font-display);font-weight:500;text-wrap:balance;margin:0;}
+p{margin:0;}
+a{color:var(--accent);text-decoration-color:var(--accent-soft);}
+a:hover{text-decoration-thickness:2px;}
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+
+/* ---------- hero / story ---------- */
+.hero{padding-block:8px 8px;display:flex;align-items:center;gap:20px;}
+.hero img{
+  width:84px;height:84px;border-radius:50%;object-fit:cover;flex:0 0 auto;
+  box-shadow:0 0 0 1px var(--line);
+}
+.hero h1{font-size:clamp(2.3rem,7vw,3.2rem);font-style:italic;letter-spacing:-0.01em;}
+@media (max-width:480px){
+  .hero{flex-direction:column;align-items:flex-start;gap:14px;}
+}
+.hero .meta{
+  display:flex;flex-wrap:wrap;gap:6px 14px;
+  margin-top:16px;
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  color:var(--ink-faint);
+}
+.hero .meta span:not(:last-child)::after{content:"·";margin-left:14px;color:var(--line);}
+
+.story{padding-block:22px 0;}
+.story p{color:var(--ink-soft);font-size:1.02rem;max-width:60ch;}
+.story p + p{margin-top:14px;}
+.story .lead{color:var(--ink);font-size:1.08rem;}
+.story .lead em{font-style:italic;color:var(--accent);}
+
+/* ---------- section rhythm ---------- */
+section{padding-block:34px;border-top:1px solid var(--line);}
+section > .eyebrow{margin-bottom:12px;}
+
+/* ---------- open to ---------- */
+.open-to p.lede{color:var(--ink-soft);max-width:58ch;margin-bottom:16px;}
+.tag-list{display:flex;flex-direction:column;gap:10px;}
+.tag-item{display:flex;gap:12px;align-items:baseline;}
+.tag-item .tag{
+  flex:0 0 auto;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--confirm);
+  background:var(--confirm-soft);
+  padding:3px 8px;
+  border-radius:5px;
+}
+.tag-item p{color:var(--ink-soft);font-size:0.96rem;}
+
+/* ---------- experience timeline ---------- */
+.timeline{display:flex;flex-direction:column;}
+.entry{
+  display:grid;
+  grid-template-columns:100px 1fr;
+  gap:18px;
+  padding-block:20px;
+  border-top:1px solid var(--line);
+}
+.entry:first-child{border-top:none;padding-top:0;}
+@media (max-width:560px){
+  .entry{grid-template-columns:1fr;gap:4px;}
+}
+.entry .when{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--ink-faint);
+  padding-top:3px;
+}
+.entry .who{font-size:1.05rem;font-weight:500;}
+.entry .role{color:var(--ink-faint);font-size:0.88rem;margin-top:1px;margin-bottom:8px;}
+.entry .desc{color:var(--ink-soft);font-size:0.95rem;}
+.entry .desc-list{margin:0;padding-left:20px;color:var(--ink-soft);font-size:0.95rem;}
+.entry .desc-list li{margin-bottom:6px;}
+.entry .desc-list li:last-child{margin-bottom:0;}
+
+/* ---------- attune case study ---------- */
+.case-study{
+  border:1px solid var(--accent);
+  background:var(--accent-soft);
+  border-radius:10px;
+  padding:20px;
+  margin-top:16px;
+}
+.case-study .eyebrow{color:var(--accent);}
+.case-study h3{font-size:1.15rem;font-style:italic;margin-top:6px;margin-bottom:10px;}
+.case-study p{color:var(--ink-soft);font-size:0.94rem;}
+.case-study p + p{margin-top:10px;}
+.case-study .links{margin-top:14px;display:flex;flex-wrap:wrap;gap:14px;font-family:var(--font-mono);font-size:12.5px;}
+
+.flash-ml{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);}
+.flash-ml .eyebrow{margin-bottom:6px;}
+.flash-ml p{color:var(--ink-soft);font-size:0.94rem;}
+
+/* ---------- portfolio / links ---------- */
+.links-grid{display:flex;flex-direction:column;gap:16px;}
+.link-group .group-label{
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  margin-bottom:6px;
+}
+.link-group ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
+.link-group li{font-size:0.95rem;color:var(--ink-soft);}
+.link-group li .desc{color:var(--ink-faint);font-size:0.86rem;}
+.placeholder-note{
+  font-size:0.88rem;
+  font-style:italic;
+  color:var(--ink-faint);
+}
+
+/* ---------- contact ---------- */
+.contact{
+  text-align:center;
+  padding-block:40px 8px;
+}
+.contact h2{font-size:1.5rem;font-style:italic;margin-bottom:12px;}
+.contact p{color:var(--ink-soft);max-width:46ch;margin:0 auto 20px;}
+.btn{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:13.5px;
+  letter-spacing:0.02em;
+  background:var(--ink);
+  color:var(--bg);
+  padding:12px 22px;
+  border-radius:7px;
+  text-decoration:none;
+}
+
+footer{
+  text-align:center;
+  padding-top:30px;
+  color:var(--ink-faint);
+  font-size:12px;
+  font-family:var(--font-mono);
+}
+</style>
+
+<div class="wrap">
+
+  <div class="hero">
+    <img src="headshot.jpg" alt="Zawwar Kamran">
+    <div>
+      <h1>Zawwar Kamran</h1>
+      <div class="meta">
+        <span>Toronto, ON</span>
+        <span>TN-eligible for U.S. roles</span>
+        <span>Tech Lead, Model Team @ Abnormal AI</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="story">
+    <p class="lead">I'm a Senior Machine Learning Engineer and Tech Lead, based in Toronto. I studied Mathematics and Statistics at the University of Toronto, and have spent the 5+ years since building production ML systems — starting as an individual contributor shipping fraud models, and now leading the technical roadmap for an entire model line at Abnormal AI.</p>
+  </div>
+
+  <section class="type-of-work" style="border-top:none;padding-top:16px;">
+    <p class="eyebrow">Type of work</p>
+    <div class="tag-list">
+      <div class="tag-item">
+        <span class="tag">Models</span>
+        <p>ML modelling — deep neural networks (Attune, Abnormal's multimodal foundation model), gradient-boosted trees and ensemble methods (XGBoost fraud models at DataVisor and Interac), PyTorch MLP surrogates for explainability, and hand-written CNNs for computer vision (PiProjet). Comfortable taking over and improving an existing model someone else built, not just building from scratch.</p>
+      </div>
+      <div class="tag-item">
+        <span class="tag">SQL</span>
+        <p>SQL querying — the data warehouse layer underneath every production detection system I've built.</p>
+      </div>
+      <div class="tag-item">
+        <span class="tag">Data</span>
+        <p>Data modelling — pipeline and schema design at scale, including Spark/Databricks jobs over multi-terabyte datasets.</p>
+      </div>
+      <div class="tag-item">
+        <span class="tag">Push</span>
+        <p>Model pushing — deployment, inferencing, and performance monitoring; robustness and drift checks across the full production lifecycle, not just training.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="open-to">
+    <p class="eyebrow">What I'm open to</p>
+    <p class="lede">Alongside my full-time role, I take on a small number of fractional and contract engagements:</p>
+    <div class="tag-list">
+      <div class="tag-item">
+        <span class="tag">Advisory</span>
+        <p>Architecture reviews, model-lifecycle design, technical roadmap input — for teams that need senior ML judgment before, or instead of, a full-time hire.</p>
+      </div>
+      <div class="tag-item">
+        <span class="tag">Hands-on</span>
+        <p>Scoped builds — a fraud or anomaly detection model, a RAG pipeline, an agentic system — including the data pipeline underneath it, not just the model on top.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Experience</p>
+    <div class="timeline">
+      <div class="entry">
+        <span class="when">2025 —<br>Present</span>
+        <div>
+          <div class="who">Abnormal AI</div>
+          <div class="role">Senior ML Engineer · Tech Lead, Model Team</div>
+          <ul class="desc-list">
+            <li>Set the technical roadmap for the Model Team and directed three ML engineers through model design and implementation reviews; mentored an intern who shipped a model and ran experiments.</li>
+            <li>Established the model lifecycle and launch process used across all Model Team releases — deprecation analysis, live-production validation, signal monitoring, and robustness checks — and coordinated model, platform, product, and detection teams to modernize the ML training platform.</li>
+            <li>Delivered customer-facing explainability for 100+ legacy models using scoring-log extraction and PyTorch MLP surrogates (R² ≥ 0.90), plus Integrated Gradients attribution for new deep models.</li>
+            <li>Built a customer-level model quality pipeline across 5,000+ customers, launching targeted critic models for elevated false-positive cohorts and feeding them back into core-model training.</li>
+            <li>Architected Attune, the multimodal foundation model — full case study below.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-study">
+      <p class="eyebrow">Case study</p>
+      <h3>Attune — Abnormal's behavioral foundation model</h3>
+      <p>This is the project that ties the whole throughline together: I owned it end to end — data pipelines, the SQL warehouse layer, training, deployment, and inference monitoring, not just the model architecture.</p>
+      <p>Attune unifies identity, behavioral, and content signals into one multimodal model, trained on Spark/Databricks pipelines over multi-terabyte datasets. It now powers <strong>85% of detections</strong> across Abnormal's platform, with meaningfully higher precision than the single-signal models it replaced.</p>
+      <div class="links">
+        <a href="https://abnormal.ai/platform/attune" target="_blank" rel="noopener">abnormal.ai/platform/attune →</a>
+        <a href="https://abnormal.ai/blog/attune-behavioral-ai-foundation-model" target="_blank" rel="noopener">Read the launch post →</a>
+      </div>
+    </div>
+
+    <div class="timeline" style="margin-top:8px;">
+      <div class="entry">
+        <span class="when">2022 —<br>2025</span>
+        <div>
+          <div class="who">DataVisor</div>
+          <div class="role">Data Scientist</div>
+          <ul class="desc-list">
+            <li>Designed and deployed real-time fraud detection models using XGBoost and ensemble methods with advanced feature engineering, improving recall 60% at a fixed precision threshold.</li>
+            <li>Combined supervised and unsupervised learning to adapt detection to evolving fraud patterns, increasing recall by a further 15%.</li>
+            <li>Built an automated RFP intelligence tool using LLMs and RAG, cutting proposal response time from a week to a day.</li>
+            <li>Implemented PySpark ETL pipelines over AWS S3, applying clustering and Winnowing-based similarity detection to surface coordinated synthetic review fraud.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="when">2020 —<br>2022</span>
+        <div>
+          <div class="who">Interac Corp</div>
+          <div class="role">Data Scientist</div>
+          <ul class="desc-list">
+            <li>Led development of a real-time scam detection model for the Interac e-Transfer platform, intercepting 58% of scams before funds were transferred.</li>
+            <li>Prevented $10M in fraud losses for a top-five Canadian bank by developing a fraud anomaly detection tool.</li>
+            <li>Applied probabilistic labeling to denoise partially labeled payment data, improving precision-recall AUC (PR AUC) by 25%.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-ml">
+      <p class="eyebrow">Independent project — Flash-ML, Co-founder</p>
+      <p>Still pulling the same thread on the side: an agentic ML experimentation platform where a 12-validator action-guard pipeline blocks invalid or non-reproducible runs before they execute — autonomy that stays verifiable, the same principle Attune is built on.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Portfolio</p>
+    <div class="links-grid">
+      <div class="link-group">
+        <div class="group-label">Attune, at Abnormal AI</div>
+        <ul>
+          <li><a href="https://abnormal.ai/platform/attune" target="_blank" rel="noopener">Attune platform page</a> <span class="desc">— what it does and why it exists</span></li>
+          <li><a href="https://abnormal.ai/blog/attune-behavioral-ai-foundation-model" target="_blank" rel="noopener">Launch post</a> <span class="desc">— the full architecture writeup</span></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <div class="group-label">Writing</div>
+        <ul>
+          <li><a href="https://substack.com/@kamzoodles/note/p-199654276" target="_blank" rel="noopener">Building FlashML: An Agent That Does the ML, Not Just the Typing</a> <span class="desc">— on Flash-ML's agent design, and why it went through YC and landed in the top 5% of applicants</span></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <div class="group-label">Code</div>
+        <ul>
+          <li><span>Flash-ML</span> <span class="desc">— agentic ML experimentation platform (private beta)</span></li>
+          <li><a href="https://github.com/zawwarkamran/PiProjet" target="_blank" rel="noopener">PiProjet</a> <span class="desc">— a smart-mirror project; hand-written PyTorch CNN for real-time facial detection</span></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <div class="group-label">Fractional work</div>
+        <ul>
+          <li><span class="placeholder-note">Case studies added as engagements complete.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact">
+    <h2>Have a scoped piece of work?</h2>
+    <p>I take on a small number of fractional and contract engagements at a time. If there's fraud, anomaly detection, or LLM/agentic work that could use a senior hand — I'd like to hear about it.</p>
+    <a class="btn" href="mailto:zakamran@gmail.com">zakamran@gmail.com</a>
+  </div>
+
+  <footer>B.Sc. Mathematics & Statistics, University of Toronto</footer>
+
+</div>
