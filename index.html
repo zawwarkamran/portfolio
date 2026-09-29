@@ -8,51 +8,21 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --bg:#EEF0F1;
+  --bg:#F4F5F6;
   --surface:#FFFFFF;
   --ink:#14181D;
-  --ink-soft:#4B535C;
-  --ink-faint:#7B838B;
+  --ink-soft:#3A4148;
+  --ink-faint:#5E656C;
   --accent:#AE4E17;
-  --accent-soft:#F1E3D8;
-  --confirm:#1F6F63;
-  --confirm-soft:#DDEBE8;
-  --neutral-soft:#E4E7E9;
-  --line:#D7DBDD;
+  --accent-soft:#F6E7DB;
+  --confirm:#1B6358;
+  --confirm-soft:#DCEBE7;
+  --neutral-soft:#E7EAEC;
+  --line:#D9DDE0;
   --font-display:'Newsreader', Georgia, 'Times New Roman', serif;
   --font-body:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono:'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
   color-scheme:light;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0F1215;
-    --surface:#181C20;
-    --ink:#E9EBEC;
-    --ink-soft:#A6ADB2;
-    --ink-faint:#767D82;
-    --accent:#E2884E;
-    --accent-soft:#3A2A1D;
-    --confirm:#5FBBAA;
-    --confirm-soft:#1C2E2A;
-    --neutral-soft:#252A2F;
-    --line:#2B3034;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0F1215;
-  --surface:#181C20;
-  --ink:#E9EBEC;
-  --ink-soft:#A6ADB2;
-  --ink-faint:#767D82;
-  --accent:#E2884E;
-  --accent-soft:#3A2A1D;
-  --confirm:#5FBBAA;
-  --confirm-soft:#1C2E2A;
-  --neutral-soft:#252A2F;
-  --line:#2B3034;
-  color-scheme:dark;
 }
 
 *{box-sizing:border-box;}
@@ -63,7 +33,7 @@ body{
   background:var(--bg);
   color:var(--ink);
   font-family:var(--font-body);
-  font-size:16px;
+  font-size:17px;
   line-height:1.6;
   padding-inline:20px;
   padding-block:56px;
@@ -73,13 +43,13 @@ img{max-width:100%;}
 
 h1,h2,h3{font-family:var(--font-display);font-weight:500;text-wrap:balance;margin:0;}
 p{margin:0;}
-a{color:var(--accent);text-decoration-color:var(--accent-soft);text-underline-offset:2px;}
-a:hover{text-decoration-thickness:2px;}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
+a{color:var(--accent);text-decoration-color:var(--accent-soft);text-underline-offset:3px;}
+a:hover{text-decoration-color:var(--accent);}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
 
 .eyebrow{
   font-family:var(--font-mono);
-  font-size:12px;
+  font-size:13px;
   letter-spacing:0.08em;
   text-transform:uppercase;
   color:var(--ink-faint);
@@ -95,8 +65,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .meta{
   display:flex;flex-wrap:wrap;gap:4px 14px;
   margin-top:10px;
-  font-family:var(--font-mono);
-  font-size:12.5px;
+  font-size:14px;
   color:var(--ink-faint);
 }
 .meta span:not(:last-child)::after{content:"·";margin-left:14px;color:var(--line);}
@@ -105,24 +74,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 }
 
 .pitch{
-  margin-top:26px;
+  margin-top:28px;
   font-family:var(--font-display);
-  font-size:clamp(1.35rem,3.6vw,1.7rem);
-  line-height:1.35;
-  max-width:34ch;
+  font-size:clamp(1.45rem,3.8vw,1.85rem);
+  line-height:1.3;
+  max-width:32ch;
   text-wrap:balance;
 }
 .pitch em{color:var(--accent);font-style:italic;}
-.bio{margin-top:14px;color:var(--ink-soft);max-width:62ch;}
+.bio{margin-top:14px;color:var(--ink-soft);max-width:60ch;}
 
-.contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
 .btn{
   display:inline-flex;align-items:center;gap:6px;
-  font-family:var(--font-mono);font-size:13px;letter-spacing:0.02em;
-  padding:10px 16px;border-radius:7px;text-decoration:none;
+  font-size:15px;font-weight:500;
+  padding:10px 18px;border-radius:8px;text-decoration:none;
   border:1px solid var(--line);color:var(--ink);background:var(--surface);
 }
-.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+.btn.primary{background:var(--ink);color:#FFFFFF;border-color:var(--ink);}
 .btn:hover{border-color:var(--ink-faint);}
 
 /* ---------- proof strip ---------- */
@@ -134,46 +103,32 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   border:1px solid var(--line);
   border-radius:10px;
   overflow:hidden;
-  margin-top:36px;
+  margin-top:40px;
 }
-.proof-item{background:var(--surface);padding:18px 16px;display:flex;flex-direction:column;gap:4px;}
+.proof-item{background:var(--surface);padding:20px 18px;display:flex;flex-direction:column;gap:4px;}
 .proof-num{
-  font-family:var(--font-mono);
-  font-size:1.55rem;
+  font-family:var(--font-display);
+  font-size:1.9rem;
   font-weight:500;
   font-variant-numeric:tabular-nums;
   color:var(--accent);
-  line-height:1.2;
+  line-height:1.15;
 }
-.proof-label{font-size:12.5px;color:var(--ink-soft);line-height:1.4;}
+.proof-label{font-size:14px;color:var(--ink-soft);line-height:1.4;}
 @media (max-width:640px){ .proof{grid-template-columns:repeat(2,1fr);} }
 
 /* ---------- sections ---------- */
-section{padding-block:40px;border-top:1px solid var(--line);margin-top:40px;}
+section{padding-block:48px 8px;margin-top:40px;border-top:1px solid var(--line);}
 section > .eyebrow{margin-bottom:6px;}
-section h2{font-size:1.6rem;font-style:italic;margin-bottom:18px;}
-
-/* ---------- what I do ---------- */
-.modes{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media (max-width:640px){ .modes{grid-template-columns:1fr;} }
-.mode{border:1px solid var(--line);border-radius:10px;padding:18px;background:var(--surface);}
-.mode h3{font-size:1.15rem;margin:8px 0 6px;}
-.mode p{color:var(--ink-soft);font-size:0.95rem;}
-
-.caps{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
-.cap{
-  font-family:var(--font-mono);font-size:12px;
-  border:1px solid var(--line);border-radius:6px;
-  padding:5px 10px;color:var(--ink-soft);
-}
+section h2{font-size:1.8rem;font-style:italic;margin-bottom:22px;}
 
 .pill{
   display:inline-block;
   font-family:var(--font-mono);
-  font-size:11px;
+  font-size:12px;
   letter-spacing:0.05em;
   text-transform:uppercase;
-  padding:3px 8px;
+  padding:3px 9px;
   border-radius:5px;
   color:var(--ink-soft);
   background:var(--neutral-soft);
@@ -182,54 +137,89 @@ section h2{font-size:1.6rem;font-style:italic;margin-bottom:18px;}
 .pill.fulltime{color:var(--confirm);background:var(--confirm-soft);}
 
 /* ---------- selected work ---------- */
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
 .filters button{
-  font-family:var(--font-mono);font-size:12.5px;
-  background:transparent;color:var(--ink-soft);
+  font-family:var(--font-body);font-size:14px;
+  background:var(--surface);color:var(--ink-soft);
   border:1px solid var(--line);border-radius:999px;
-  padding:6px 14px;cursor:pointer;
+  padding:6px 15px;cursor:pointer;
 }
-.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#FFFFFF;border-color:var(--ink);}
 
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
 @media (max-width:700px){ .grid{grid-template-columns:1fr;} }
 
 .card{
   background:var(--surface);
   border:1px solid var(--line);
-  border-radius:10px;
-  padding:20px;
+  border-radius:12px;
+  padding:22px;
   display:flex;flex-direction:column;gap:10px;
 }
 .card.featured{grid-column:1 / -1;border-color:var(--accent);}
-.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;}
-.card-client{font-family:var(--font-mono);font-size:12px;color:var(--ink-faint);}
-.card h3{font-size:1.25rem;line-height:1.3;}
-.card.featured h3{font-size:1.45rem;}
-.card dl{margin:0;display:flex;flex-direction:column;gap:8px;}
-.card dt{
-  font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;
-  text-transform:uppercase;color:var(--ink-faint);
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+.card-client{font-size:14px;color:var(--ink-faint);}
+.card h3{font-size:1.35rem;line-height:1.3;}
+.card.featured h3{font-size:1.6rem;}
+.card-summary{color:var(--ink-soft);max-width:65ch;}
+.card-result{color:var(--ink);font-weight:500;max-width:65ch;}
+.card-result::before{content:"→ ";color:var(--accent);}
+
+.card details{border-top:1px solid var(--line);padding-top:10px;margin-top:4px;}
+.card summary{
+  cursor:pointer;font-size:14px;color:var(--ink-faint);
+  list-style:none;display:inline-flex;align-items:center;gap:6px;
 }
-.card dd{margin:2px 0 0;color:var(--ink-soft);font-size:0.94rem;}
-.card dd.result{color:var(--ink);}
-.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px;}
-.card-tags span{font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);}
-.card-tags span:not(:last-child)::after{content:"·";margin-left:6px;}
-.card-links{display:flex;flex-wrap:wrap;gap:14px;font-family:var(--font-mono);font-size:12.5px;}
+.card summary::-webkit-details-marker{display:none;}
+.card summary::before{content:"+";font-family:var(--font-mono);width:1em;}
+.card details[open] summary::before{content:"−";}
+.card details dl{margin:12px 0 0;display:flex;flex-direction:column;gap:10px;}
+.card details dt{font-size:14px;font-weight:600;color:var(--ink);}
+.card details dd{margin:2px 0 0;color:var(--ink-soft);max-width:65ch;}
+
+.card-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:6px;}
+.card-links{display:flex;flex-wrap:wrap;gap:16px;font-size:15px;font-weight:500;}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.card-tags span{font-size:13px;color:var(--ink-faint);background:var(--bg);border-radius:5px;padding:2px 8px;}
+
+/* ---------- how I work ---------- */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step;}
+@media (max-width:760px){ .steps{grid-template-columns:1fr;} }
+.steps li{
+  counter-increment:step;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:22px;
+}
+.steps li::before{
+  content:counter(step);
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--accent-soft);color:var(--accent);
+  font-family:var(--font-display);font-size:1.1rem;font-weight:500;
+  margin-bottom:12px;
+}
+.steps h3{font-size:1.25rem;margin-bottom:6px;}
+.steps p{color:var(--ink-soft);}
+
+.caps{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+.cap{
+  font-size:14px;
+  border:1px solid var(--line);border-radius:6px;background:var(--surface);
+  padding:5px 11px;color:var(--ink-soft);
+}
 
 /* ---------- experience ---------- */
 .timeline{display:flex;flex-direction:column;}
 .role{
-  display:grid;grid-template-columns:130px 1fr;gap:16px;
-  padding-block:14px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:140px 1fr;gap:18px;
+  padding-block:16px;border-top:1px solid var(--line);
 }
 .role:first-child{border-top:none;padding-top:0;}
 @media (max-width:560px){ .role{grid-template-columns:1fr;gap:2px;} }
-.role .when{font-family:var(--font-mono);font-size:12px;color:var(--ink-faint);padding-top:3px;}
-.role .who{font-weight:500;}
+.role .when{font-size:14px;color:var(--ink-faint);padding-top:2px;}
+.role .who{font-weight:600;}
 .role .who span{color:var(--ink-faint);font-weight:400;}
-.role p{color:var(--ink-soft);font-size:0.94rem;margin-top:2px;}
+.role p{color:var(--ink-soft);margin-top:2px;}
 
 /* ---------- contact ---------- */
 .contact{text-align:center;}
@@ -239,10 +229,9 @@ section h2{font-size:1.6rem;font-style:italic;margin-bottom:18px;}
 
 footer{
   text-align:center;
-  padding-top:30px;
+  padding-top:36px;
   color:var(--ink-faint);
-  font-size:12px;
-  font-family:var(--font-mono);
+  font-size:14px;
 }
 </style>
 </head>
@@ -263,7 +252,7 @@ footer{
     </div>
 
     <p class="pitch">I build production ML systems end to end — from data pipelines to deployed models and AI agents. <em>Available for fractional and contract work.</em></p>
-    <p class="bio">Senior Machine Learning Engineer and Tech Lead with 5+ years shipping ML end to end — data pipelines, modelling, deployment, and monitoring. B.Sc. Mathematics &amp; Statistics, University of Toronto.</p>
+    <p class="bio">Senior Machine Learning Engineer and Tech Lead with 5+ years shipping ML end to end — data pipelines, modelling, deployment, and monitoring.</p>
 
     <div class="contact-row">
       <a class="btn primary" href="mailto:zakamran@gmail.com">Email me</a>
@@ -275,20 +264,29 @@ footer{
   </header>
 
   <section>
-    <p class="eyebrow">What I do</p>
-    <h2>Two ways to work together</h2>
-    <div class="modes">
-      <div class="mode">
-        <span class="pill fulltime">Advisory</span>
-        <h3>Fractional ML lead</h3>
-        <p>Architecture reviews, model-lifecycle design, technical roadmap input — for teams that need senior ML judgment before, or instead of, a full-time hire.</p>
-      </div>
-      <div class="mode">
-        <span class="pill contract">Hands-on</span>
-        <h3>Scoped builds</h3>
-        <p>A fraud or anomaly detection model, a RAG pipeline, an agentic system, an analytics deep-dive — including the data pipeline underneath it, not just the model on top.</p>
-      </div>
-    </div>
+    <p class="eyebrow">Selected work</p>
+    <h2>Recent projects and engagements</h2>
+    <div class="filters" id="filters" hidden></div>
+    <div class="grid" id="work"></div>
+  </section>
+
+  <section>
+    <p class="eyebrow">How I work</p>
+    <h2>What working together looks like</h2>
+    <ol class="steps">
+      <li>
+        <h3>Intro call</h3>
+        <p>A short call to understand the problem, the data you have, and what success looks like.</p>
+      </li>
+      <li>
+        <h3>Scoped engagement</h3>
+        <p>Either advisory — a few hours a week of architecture and roadmap input — or a hands-on build with a clear deliverable and timeline, agreed upfront.</p>
+      </li>
+      <li>
+        <h3>Handoff</h3>
+        <p>Working code, documentation, and a walkthrough, so your team owns it after I'm gone.</p>
+      </li>
+    </ol>
     <div class="caps">
       <span class="cap">ML modelling</span>
       <span class="cap">SQL &amp; warehousing</span>
@@ -297,13 +295,6 @@ footer{
       <span class="cap">LLMs, RAG &amp; agents</span>
       <span class="cap">Analytics &amp; experimentation</span>
     </div>
-  </section>
-
-  <section>
-    <p class="eyebrow">Selected work</p>
-    <h2>Recent projects and engagements</h2>
-    <div class="filters" id="filters" hidden></div>
-    <div class="grid" id="work"></div>
   </section>
 
   <section>
@@ -348,15 +339,17 @@ footer{
 
 <script>
 // To add new work: add one object to WORK. Array order is display order.
+// summary + result are what show by default; problem + built sit under "How I did it".
 const WORK = [
   {
     type: "Full-time",
     client: "Abnormal AI",
-    title: "Attune — a behavioral foundation model for email security",
     period: "2025 — Present",
+    title: "Attune — a behavioral foundation model for email security",
+    summary: "Replaced separate identity, behavior, and content models with one multimodal model — built end to end, from data pipelines to production monitoring.",
+    result: "Powers 85% of detections across Abnormal's platform.",
     problem: "Detection relied on separate identity, behavior, and content models that each saw only part of the picture.",
-    built: "Owned it end to end: data pipelines, the SQL warehouse layer, training on Spark/Databricks over multi-terabyte datasets, deployment, and inference monitoring. One multimodal model unifying all three signal types.",
-    result: "Now powers 85% of detections across Abnormal's platform, with higher precision than the models it replaced.",
+    built: "Owned it end to end: data pipelines, the SQL warehouse layer, training on Spark/Databricks over multi-terabyte datasets, deployment, and inference monitoring. It also beats the models it replaced on precision.",
     tags: ["PyTorch", "Spark", "Databricks", "Multimodal"],
     links: [
       { label: "Platform page", url: "https://abnormal.ai/platform/attune" },
@@ -367,55 +360,60 @@ const WORK = [
   {
     type: "Contract",
     client: "Toronto IRL · Rabia Sohail",
-    title: "Audience analytics for a Toronto events newsletter",
     period: "",
-    problem: "Understand who reads, what they click, and which hooks actually get newsletters opened.",
-    built: "Joined subscriber demographics with per-send open and click logs to build reader segments, rank sections and link types by engagement, and analyze which subject lines and opening hooks win. Recommendations were adopted in how the newsletter is written and ordered.",
+    title: "Audience analytics for a Toronto events newsletter",
+    summary: "Worked out who reads, what they click, and which subject lines get opened — then turned it into changes to how the newsletter is written.",
     result: "",
+    problem: "Understand the reader base and which content and hooks drive opens and clicks.",
+    built: "Joined subscriber demographics with per-send open and click logs to build reader segments, rank sections and link types by engagement, and compare subject lines and opening hooks. The recommendations were adopted in how the newsletter is written and ordered.",
     tags: ["Analytics", "Segmentation", "SQL", "Python"],
     links: [{ label: "torontoirl.ca", url: "https://torontoirl.ca" }]
   },
   {
     type: "Full-time",
     client: "Interac Corp",
-    title: "Real-time scam detection for e-Transfer",
     period: "2020 — 2022",
-    problem: "Stop scam payments before funds leave the sender's account, with partially labelled data.",
-    built: "A real-time scam detection model plus a fraud anomaly detection tool; probabilistic labelling to denoise partially labelled payment data (+25% PR AUC).",
-    result: "58% of scams intercepted before transfer; $10M in fraud losses prevented for a top-five Canadian bank.",
+    title: "Real-time scam detection for e-Transfer",
+    summary: "Built a model that flags scam payments before the money leaves the sender's account.",
+    result: "58% of scams stopped before transfer; $10M in fraud losses prevented.",
+    problem: "Stop scam payments in real time, with only partially labelled data.",
+    built: "A real-time scam detection model plus a fraud anomaly detection tool for a top-five Canadian bank; probabilistic labelling to denoise partial labels (+25% PR AUC).",
     tags: ["Anomaly detection", "Real-time", "Weak supervision"],
     links: []
   },
   {
     type: "Full-time",
     client: "DataVisor",
-    title: "Fraud detection models + an LLM proposal assistant",
     period: "2022 — 2025",
+    title: "Fraud detection models + an LLM proposal assistant",
+    summary: "Real-time fraud models that adapt to new attack patterns, plus an LLM tool that drafts answers to security RFPs.",
+    result: "60% recall lift at fixed precision; RFP turnaround cut from a week to a day.",
     problem: "Keep up with evolving fraud patterns, and cut the time spent answering security RFPs.",
-    built: "XGBoost/ensemble fraud models with supervised and unsupervised signals, PySpark ETL over S3 for synthetic review fraud, and an LLM + RAG tool that drafts RFP responses.",
-    result: "60% recall lift at fixed precision (+15% more from unsupervised signals); RFP turnaround cut from a week to a day.",
+    built: "XGBoost/ensemble models with supervised and unsupervised signals (+15% recall on top), PySpark ETL over S3 for synthetic review fraud, and an LLM + RAG tool that drafts RFP responses.",
     tags: ["XGBoost", "PySpark", "LLMs", "RAG"],
     links: []
   },
   {
     type: "Side project",
     client: "Flash-ML · Co-founder",
-    title: "An agent that does the ML, not just the typing",
     period: "2025 — 2026",
-    problem: "Most ML work is repetitive scaffolding, and code assistants start cold every time.",
-    built: "An LLM agent that explores data, builds features, and runs and evaluates experiments. The LLM only decides what to do; a separate deterministic layer executes it, so results stay reproducible.",
+    title: "An agent that does the ML, not just the typing",
+    summary: "An LLM agent that explores data, builds features, and runs experiments — with a deterministic layer so results stay reproducible.",
     result: "Top 5% of Y Combinator applicants.",
+    problem: "Most ML work is repetitive scaffolding, and code assistants start cold every time.",
+    built: "The LLM only decides what to do; a separate deterministic layer executes it, so experiments are reproducible even with an AI driving. FastAPI and WebSockets on top of Postgres and S3.",
     tags: ["Agents", "LLMs", "FastAPI", "Postgres"],
     links: [{ label: "Write-up", url: "https://substack.com/@kamzoodles/note/p-199654276" }]
   },
   {
     type: "Side project",
     client: "PiSmartMirror",
-    title: "Multi-person face recognition, in the browser",
     period: "",
-    problem: "A smart mirror that recognizes who's in front of it — and scales to new people without retraining.",
-    built: "Haar cascade for face localization and a hand-written PyTorch CNN trained with triplet loss for embeddings; nearest-neighbour matching for recognition. Exported to ONNX to run fully client-side.",
-    result: "~78% recognition accuracy on people never seen in training.",
+    title: "Multi-person face recognition, in the browser",
+    summary: "A smart mirror that recognizes who's in front of it and adds new people without retraining — now running fully in the browser.",
+    result: "~78% accuracy on people never seen in training.",
+    problem: "Recognize multiple people, and add new ones without retraining a classifier each time.",
+    built: "Haar cascade for face localization, a hand-written PyTorch CNN trained with triplet loss for embeddings, and nearest-neighbour matching. Exported to ONNX to run client-side.",
     tags: ["PyTorch", "Computer vision", "ONNX"],
     links: [
       { label: "Live demo", url: "https://zawwarkamran.github.io/PiSmartMirror/" },
@@ -456,12 +454,25 @@ function renderProof() {
 }
 
 function renderCard(item) {
-  const fields = [["Problem", item.problem, ""], ["What I built", item.built, ""], ["Result", item.result, "result"]]
+  const detailFields = [["The problem", item.problem], ["What I built", item.built]]
     .filter(([, value]) => value)
-    .flatMap(([label, value, cls]) => [el("dt", { text: label }), el("dd", { class: cls, text: value })]);
+    .flatMap(([label, value]) => [el("dt", { text: label }), el("dd", { text: value })]);
+
+  const details = detailFields.length
+    ? el("details", {}, [el("summary", { text: "How I did it" }), el("dl", {}, detailFields)])
+    : null;
 
   const links = (item.links || []).map((l) =>
     el("a", { href: l.url, target: "_blank", rel: "noopener", text: l.label + " →" }));
+
+  const foot = (links.length || (item.tags && item.tags.length))
+    ? el("div", { class: "card-foot" }, [
+        links.length ? el("div", { class: "card-links" }, links) : null,
+        item.tags && item.tags.length
+          ? el("div", { class: "card-tags" }, item.tags.map((t) => el("span", { text: t })))
+          : null
+      ])
+    : null;
 
   return el("article", { class: "card" + (item.featured ? " featured" : ""), "data-type": item.type }, [
     el("div", { class: "card-head" }, [
@@ -469,11 +480,10 @@ function renderCard(item) {
       el("span", { class: "card-client", text: [item.client, item.period].filter(Boolean).join(" · ") })
     ]),
     el("h3", { text: item.title }),
-    el("dl", {}, fields),
-    links.length ? el("div", { class: "card-links" }, links) : null,
-    item.tags && item.tags.length
-      ? el("div", { class: "card-tags" }, item.tags.map((t) => el("span", { text: t })))
-      : null
+    item.summary ? el("p", { class: "card-summary", text: item.summary }) : null,
+    item.result ? el("p", { class: "card-result", text: item.result }) : null,
+    details,
+    foot
   ]);
 }
 
