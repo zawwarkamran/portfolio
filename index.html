@@ -125,6 +125,12 @@ section > h2{
 .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;}
 .tags span{font-size:13px;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 11px;}
 
+.open-to{padding:22px;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:36px;}
+.open-to h3,h3.sub{font-family:var(--font-body);font-size:1rem;font-weight:600;margin-bottom:12px;}
+.open-to ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:8px;}
+.open-to li::marker{color:var(--accent);}
+.open-to strong{color:var(--ink);font-weight:600;}
+
 .how{margin-top:28px;padding:22px;border:1px solid var(--line);border-radius:10px;background:var(--surface);}
 .how h3{font-family:var(--font-body);font-size:1rem;font-weight:600;margin-bottom:12px;}
 .how ol{margin:0 0 18px;padding-left:1.3em;display:flex;flex-direction:column;gap:6px;}
@@ -167,11 +173,22 @@ footer{font-size:14px;color:var(--ink-faint);max-width:48ch;}
       <h2>About</h2>
       <p>I'm a machine learning engineer and tech lead based in Toronto. For the past five-plus years I've built ML systems end to end: <strong>the data pipelines underneath, the models themselves, and the work of getting them into production and keeping them healthy.</strong></p>
       <p>Right now I lead the Model Team at <a href="https://abnormal.ai" target="_blank" rel="noopener">Abnormal AI</a>. Before that I built real-time models at DataVisor and Interac. On the side I build with LLMs and agents — I co-founded Flash-ML, an agentic ML experimentation platform.</p>
-      <p>I take on a small number of contract projects: <strong>building and shipping models, setting up data pipelines and analytics, building LLM features, or advising a team on its ML roadmap.</strong> I studied Mathematics and Statistics at the University of Toronto.</p>
+      <p>Alongside that, I take on a small number of <a href="#contract">contract projects</a>. I studied Mathematics and Statistics at the University of Toronto.</p>
     </section>
 
     <section id="contract">
       <h2>Contract work</h2>
+      <div class="open-to">
+        <h3>Open to</h3>
+        <ul>
+          <li><strong>ML models</strong> — building, training, and shipping models, or improving one you already have</li>
+          <li><strong>Data pipelines &amp; warehousing</strong> — getting data into shape so it can actually be used</li>
+          <li><strong>Analytics</strong> — answering business questions, like who your users are and what's working</li>
+          <li><strong>LLM features &amp; agents</strong> — RAG, assistants, and agentic workflows</li>
+          <li><strong>Advisory</strong> — a few hours a week of architecture and ML roadmap input</li>
+        </ul>
+      </div>
+      <h3 class="sub">Recent engagements</h3>
       <ol class="entries" id="contract-list"></ol>
 
       <div class="how">
